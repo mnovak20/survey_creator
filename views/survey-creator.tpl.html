@@ -1,0 +1,56 @@
+
+<div>
+	<button class="btn btn-success" id="add-survey" ng-click="addSurvey()"><span class="icon icon-list"></span> Add new survey</button>
+
+	<uib-accordion ng-repeat="survey in surveys track by $index" close-others="true">
+	    <uib-accordion-group heading="{{survey.name}}">
+	    		<div class="survey-info">
+	    			<div class="label label-default">Survey name</div>
+	    			<input class="form-control" type="text" ng-model="survey.name" placeholder="Enter name of new survey"/>
+	    			<div class="label label-default">Description</div>
+	    			<input class="form-control" type="text" ng-model="survey.description" placeholder="Enter desctiption"/>
+	    			<div class="label label-default">Completion Message</div>
+	    			<input class="form-control" type="text" ng-model="survey.completionMessage" placeholder="Enter message to show users upon survey completion"/>
+	    			<div class="label label-default">Survey Theme</div>
+	    			<div class="btn-group">
+	    					<label class="btn btn-default" ng-model="survey.theme" uib-btn-radio="'default'" uncheckable>Default</label>
+                <label class="btn btn-default" ng-model="survey.theme" uib-btn-radio="'dark'" uncheckable>Dark</label>
+                <label class="btn btn-default" ng-model="survey.theme" uib-btn-radio="'bright'" uncheckable>Bright</label>
+            </div>
+	    		</div>
+	    		
+
+	    		<div class="add-question-group">
+	    			<h3>- Questions -</h3>
+	    			<button class="btn btn-primary" ng-click="addQuestion('bool',survey.questions)"><span class="icon icon-plus"> Yes/No question</button>
+	    			<button class="btn btn-primary" ng-click="addQuestion('multi',survey.questions)"><span class="icon icon-plus"> Multiple choice question</button>
+	    			<button class="btn btn-primary" ng-click="addQuestion('short',survey.questions)"><span class="icon icon-plus"> Short answer question</button>
+	    		</div>
+	      	<div class="question-container" ng-repeat="question in survey.questions | questionFilter">
+	      		<div>
+	      			<span id="question-description" class="label label-default">
+	      				<span ng-bind="$index+1"></span>. <span ng-bind="question.questionType"></span>
+	      			</span>
+	      			<span class="btn-group question-buttons">
+	      				<label class="btn btn-success" ng-if="question.questionType === 'Multiple Choice'" ng-click="addOption(question.options)">
+	      					<span class="icon icon-plus"></span>
+	      				</label>
+	      				<label class="btn btn-danger" ng-click="removeQuestion($index,survey.questions)"><span class="icon icon-cross"></span></label>
+	      				<label class="btn btn-default" ng-click="moveQuestion('up',$index,survey.questions)"><span class="icon icon-arrow-up"></span></label>
+	      				<label class="btn btn-default" ng-click="moveQuestion('down',$index,survey.questions)"><span class="icon icon-arrow-down"></span></label>
+	      			</span>
+	      		</div>
+	      		<input type="text" class="form-control" placeholder="Enter question text" ng-model="question.questionText"/>
+	      		<div class="question-options" ng-if="question.questionType === 'Multiple Choice'" ng-repeat="option in question.options track by $index">
+	      			<input type="text" class="form-control" placeholder="multiple choice option" ng-model="option"/>
+	      			<span class="icon icon-cross btn btn-default" ng-click="removeOption($index,question.options)"></span>
+	      		</div>
+	      	</div>
+	      	<div class="survey-button-group">
+	      		<div class="btn btn-warning" ng-click="previewSurvey(survey)">Preview</div>
+		      	<div class="btn btn-primary" ng-click="saveSurvey(survey,$index)">Save</div>
+		      	<div class="btn btn-danger" ng-click="deleteSurvey($index)">Delete</div>
+		      </div>
+	    </uib-accordion-group>
+	</uib-accordion>
+</div>

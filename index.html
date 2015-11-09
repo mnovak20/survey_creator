@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/survey-creator-directive.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  </head>
+  <body ng-app="surveyCreator">
+  
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+        </ul>
+        <h3 class="text-muted">Survey Creator</h3>
+      </div>
+
+      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+
+      <div class="footer">
+      </div>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/modal.js"></script>
+    <script src="scripts/services/calls.js"></script>
+    <script src="scripts/directives/surveycreator.js"></script>
+    <script src="scripts/filters/surveyfilter.js"></script>
+</body>
+</html>

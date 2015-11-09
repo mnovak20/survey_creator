@@ -1,0 +1,24 @@
+
+
+<div class="modal-body" ng-class="{'{{survey.theme}}': survey.theme}">
+    <h3 class="modal-title"><span ng-bind="survey.name"></span></h3>
+    <div class="preview-question-container" ng-repeat="question in survey.questions">
+        <div class="question-panel">
+            <div class="preview-question-text"><span ng-bind="$index+1"></span>. <span ng-bind="question.questionText"></span></div>
+        </div>
+        <div ng-if="question.questionType == 'Yes/No'">
+             <div class="btn-group">
+                <label class="btn btn-default" ng-model="yesno" uib-btn-radio="'Yes'" uncheckable>Yes</label>
+                <label class="btn btn-default" ng-model="yesno" uib-btn-radio="'No'" uncheckable>No</label>
+            </div>
+        </div>
+        <div ng-if="question.questionType == 'Short Answer'">
+            <input type="text" class="form-control" placeholder="Short answer"/> 
+        </div>
+        <div ng-if="question.questionType == 'Multiple Choice'">
+            <div class="preview-options" ng-repeat="option in question.options track by $index">
+                <input type="checkbox"/> <span ng-bind="option"></span>
+            </div>
+        </div>
+    </div>
+</div>

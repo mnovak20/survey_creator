@@ -1,0 +1,25 @@
+{
+  "name": "video_upload",
+  "authors": [
+    "Mike <mnovak419@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.1.1",
+    "angular": "~1.4.7",
+    "angular-bootstrap": "~0.14.3",
+    "lodash": "~3.10.1"
+  }
+}

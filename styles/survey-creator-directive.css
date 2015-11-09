@@ -1,0 +1,69 @@
+
+
+uib-accordion > div.panel-group{
+  margin-bottom : 0;
+}
+
+.survey-info > input{
+  margin-bottom : 0.5em;
+}
+
+
+.add-question-group{
+	width:89%;
+	margin:1em auto 1em auto;
+}
+
+.add-question-group > h3{
+	width:25%;
+	margin:1em auto 1em auto;
+}
+
+div.question-options{
+	margin-top:0.5em;
+}
+
+div.question-options:last-of-type{
+	margin-bottom:1em;
+}
+
+div.question-options > input{
+	width:80%;
+	display: inline-block;
+	margin-left:6.4em;
+}
+
+.survey-info > div.btn-group{
+	width:100%;
+}
+
+button#add-survey{
+	margin-bottom:1em;
+}
+
+.survey-button-group{
+	margin-top:1em;
+	float: right;
+}
+
+.question-container{
+	margin-bottom:0.5em;
+}
+
+.question-container > div{
+	margin-bottom:0.5em;
+}
+
+.question-buttons{
+	float: right;
+	margin-bottom:0.5em;
+}
+
+#question-description{
+	line-height: 3 !important;
+	font-size: 1em;
+}
+
+.survey-info{
+	font-size:1.3em;
+}
